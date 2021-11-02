@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>avatar</ion-title>
+    <ion-back-button slot="start" defaultHref="/"></ion-back-button>
+    <ion-title>Avatar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar class="perfil">
+        <!-- <img src="/assets/stan-lee.jpg" alt="profile-pic"> -->
+        <ion-img src="/assets/stan-lee.jpg" alt="profile-pic"></ion-img>
+        <!--Esto carga la imagen mediante lazy load, lo que resulta mas eficiente en tiempos de carga del app-->
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-chip color="primary" outline="true" *ngFor="let item of [1,1,1,1,1]">
+    <ion-avatar>
+      <img src="/assets/stan-lee.jpg" alt="profile-pic" />
+    </ion-avatar>
+    <ion-label>Default</ion-label>
+  </ion-chip>
 
+  <ion-list>
+    <ion-item *ngFor="let item of [1,1,1,1]">
+      <ion-avatar class="perfil">
+        <img src="/assets/stan-lee.jpg" alt="stans-pic" />
+      </ion-avatar>
+      <ion-label>Stan Lee</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
